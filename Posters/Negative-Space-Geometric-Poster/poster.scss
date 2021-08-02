@@ -1,0 +1,66 @@
+@import "../common.scss";
+
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+$white: transparent;
+$grey: #314858;
+$yellow: #e5be47;
+$orange: #d8753c;
+$red: #e83552;
+$green: #43ac9b;
+
+$frame_height: 60vh;
+.frame {
+    width: calc(#{$frame_height} * 0.4);
+    padding: calc(#{$frame_height} * 0.2) calc(#{$frame_height} * 0.3);
+}
+
+.frame-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    height: 100%;
+}
+
+.grid-item {
+    text-indent: -999px;
+    overflow: hidden;
+    aspect-ratio: 1;
+
+    > div {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &.grey {
+        background: linear-gradient(135deg, $grey 0%, $grey 50%, $white 50%, $white 100%);
+    }
+    &.yellow {
+        background: linear-gradient(135deg, $yellow 0%, $yellow 50%, $white 50%, $white 100%);
+    }
+    &.orange {
+        background: linear-gradient(135deg, $orange 0%, $orange 50%, $white 50%, $white 100%);
+    }
+    &.red {
+        background: linear-gradient(135deg, $red 0%, $red 50%, $white 50%, $white 100%);
+    }
+    &.green {
+        background: linear-gradient(135deg, $green 0%, $green 50%, $white 50%, $white 100%);
+    }
+
+    &.top {
+        &.right {
+            transform: rotate(90deg);
+        }
+    }
+    &.bottom {
+        &.left {
+            transform: rotate(270deg);
+        }
+        &.right {
+            transform: rotate(180deg);
+        }
+    }
+}

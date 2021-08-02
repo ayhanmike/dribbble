@@ -1,0 +1,182 @@
+@import '../common.scss';
+
+.frame-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 100%;
+}
+
+.grid-item {
+    background-color: #0193cf;
+    text-indent: -999px;
+    overflow: hidden;
+    aspect-ratio: 1;
+
+    &:nth-child(2n + 1) {
+        background-color: #003f6b;
+    }
+
+    > div {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .grid-1 {
+        background-color: #0193cf;
+        .triangles {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            .triangle {
+                background-color: #003f6b;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                bottom: -71%;
+                transform: rotate(45deg);
+
+                &:first-child {
+                    top: -71%;
+                }
+            }
+        }
+    }
+
+    $dot_size: 36%;
+    .grid-2,
+    .grid-12 {
+        background-color: #0056a3;
+        position: relative;
+
+        &.grid-12 {
+            background-color: #0094d1;
+        }
+
+        .dots {
+            position: absolute;
+            display: grid;
+            grid-template-columns: auto auto;
+            height: 50%;
+            width: 50%;
+            left: 25%;
+            top: 25%;
+
+            .dot {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &::before {
+                    content: " ";
+                    background-color: #fff;
+                    width: $dot_size;
+                    height: $dot_size;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+
+    .grid-3 {
+        background: linear-gradient(225deg, #06c2c7 0%, #06c2c7 50%, #003f6b 50%, #003f6b 100%);
+    }
+
+    .grid-4 {
+        background-color: #06c2c7;
+        position: relative;
+
+        .dots {
+            $percent: 8.5;
+            position: absolute;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            height: calc(100% * #{$percent} / 10);
+            width: calc(100% * #{$percent} / 10);
+            left: calc(calc(100% - calc(100% * #{$percent} / 10)) / 2);
+            top: calc(calc(100% - calc(100% * #{$percent} / 10)) / 2);
+
+            .dot {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &::before {
+                    content: " ";
+                    background-color: #fff;
+                    width: calc(#{$dot_size} * 10 / #{$percent});
+                    height: calc(#{$dot_size} * 10 / #{$percent});
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+
+    .grid-5,
+    .grid-7,
+    .grid-8 {
+        background-color: #003e6d;
+        position: relative;
+        .circle {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            bottom: -100%;
+            left: -100%;
+            border-radius: 100%;
+            background: radial-gradient(50% 50% at 50% 50%, #003e6d 0%, #003e6d 50%, #ffffff 50%, #ffffff 100%);
+        }
+        &.grid-7 {
+            background-color: #c1e6f2;
+            .circle {
+                background: radial-gradient(50% 50% at 50% 50%, #c1e6f2 0%, #c1e6f2 50%, #ffffff 50%, #ffffff 100%);
+                top: -100%;
+                left: unset;
+                right: -100%;
+            }
+        }
+        &.grid-8 {
+            background-color: #0055a4;
+            .circle {
+                background: radial-gradient(50% 50% at 50% 50%, #0055a4 0%, #0055a4 50%, #ffffff 50%, #ffffff 100%);
+                top: -100%;
+            }
+        }
+    }
+
+    .grid-6,
+    .grid-11 {
+        background-color: #c2e6f5;
+    }
+
+    .grid-9 {
+        background: linear-gradient(135deg, #06c2c7 0%, #06c2c7 50%, #003f6b 50%, #003f6b 100%);
+    }
+
+    .grid-10,
+    .grid-13 {
+        background: linear-gradient(90deg, #0056a1 0%, #0056a1 50%, #0293cf 50%, #0293cf 100%);
+    }
+
+    .grid-14,
+    .grid-15 {
+        background-color: #003f69;
+        position: relative;
+        .circle {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -100%;
+            right: -100%;
+            border-radius: 100%;
+            background-color: #06c2c7;
+        }
+
+        &.grid-15 {
+            .circle {
+                left: -100%;
+            }
+        }
+    }
+}

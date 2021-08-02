@@ -1,0 +1,47 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #efefef 0,
+        #efefef 80vh,
+        #cccccc 80vh,
+        #cccccc calc(80vh + 1px),
+        #ffffff calc(80vh + 1px),
+        #ffffff 100vh
+    );
+}
+
+.wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.poster {
+    position: relative;
+    padding: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+$frame_height: 60vh;
+.frame {
+    position: relative;
+    height: $frame_height;
+    width: calc(#{$frame_height} * 0.6);
+    background-color: #ffffff;
+    padding: calc(#{$frame_height} * 0.2);
+    box-sizing: content-box;
+    border-bottom: 1px solid lightgray;
+    transform: perspective(calc(#{$frame_height} * 0.6)) rotateX(1deg);
+    box-shadow: -4vh 4vh 8vh rgba($color: #000000, $alpha: 0.37);
+}
