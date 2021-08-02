@@ -52,11 +52,6 @@ body {
           box-shadow: -4vh 4vh 8vh rgba(0, 0, 0, 0.37);
 }
 
-* {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
 .frame {
   width: calc(60vh * 0.4);
   padding: calc(60vh * 0.2) calc(60vh * 0.3);
@@ -68,6 +63,11 @@ body {
   -ms-grid-columns: auto auto auto auto;
       grid-template-columns: auto auto auto auto;
   height: 100%;
+}
+
+.frame-grid * {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .grid-item {

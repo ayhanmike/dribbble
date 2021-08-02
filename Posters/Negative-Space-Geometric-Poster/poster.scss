@@ -1,8 +1,5 @@
 @import "../common.scss";
 
-* {
-    transition: all 0.2s ease-in-out;
-}
 
 $white: transparent;
 $grey: #314858;
@@ -21,6 +18,9 @@ $frame_height: 60vh;
     display: grid;
     grid-template-columns: auto auto auto auto;
     height: 100%;
+    * {
+        transition: all 0.2s ease-in-out;
+    }
 }
 
 .grid-item {

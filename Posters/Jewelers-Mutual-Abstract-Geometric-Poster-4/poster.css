@@ -42,7 +42,7 @@ body {
   height: 60vh;
   width: calc(60vh * 0.6);
   background-color: #ffffff;
-  padding: 12vh;
+  padding: calc(60vh * 0.2);
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   border-bottom: 1px solid lightgray;
