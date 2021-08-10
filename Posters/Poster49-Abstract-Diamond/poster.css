@@ -53,12 +53,45 @@ body {
 }
 
 .frame-grid {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto;
       grid-template-columns: auto auto auto;
   height: 100%;
-  background: repeating-linear-gradient(#dadaec, #dadaec calc(100%/48), #fff calc(100%/48), #fff calc(200%/48));
+  background: repeating-linear-gradient(#dadaec, #dadaec calc(100% /96), #fff calc(100% /96), #fff calc(200% /96));
+}
+
+.mask-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  -webkit-clip-path: circle(calc(10 * 100% /96) at 70% 20%);
+          clip-path: circle(calc(10 * 100% /96) at 70% 20%);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  height: 100%;
+  background: repeating-linear-gradient(#6565c5, #6565c5 calc(100% /96), #fff calc(100% /96), #fff calc(200% /96));
+}
+
+.mask-white {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  height: 50%;
+  background: #fff;
 }
 
 .grid-item {
