@@ -54,10 +54,6 @@ body {
 
 .frame-grid {
   position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
   height: 100%;
   background: repeating-linear-gradient(#dadaec, #dadaec calc(100% /96), #fff calc(100% /96), #fff calc(200% /96));
 }
@@ -68,13 +64,32 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 9;
+  height: 100%;
+  background: repeating-linear-gradient(#6565c5, #6565c5 calc(100% /96), #fff calc(100% /96), #fff calc(200% /96));
+}
+
+.mask-circle:hover {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.mask-circle.default {
+  -webkit-clip-path: circle(calc(7 * 100% /96) at 75% 15%);
+          clip-path: circle(calc(7 * 100% /96) at 75% 15%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.mask-polygon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 2;
-  -webkit-clip-path: circle(calc(10 * 100% /96) at 70% 20%);
-          clip-path: circle(calc(10 * 100% /96) at 70% 20%);
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+  -webkit-clip-path: polygon(50% 25%, 90% 50%, 50% 75%, 10% 50%);
+          clip-path: polygon(50% 25%, 90% 50%, 50% 75%, 10% 50%);
   height: 100%;
   background: repeating-linear-gradient(#6565c5, #6565c5 calc(100% /96), #fff calc(100% /96), #fff calc(200% /96));
 }
@@ -83,7 +98,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
   right: 0;
   z-index: 1;
   display: -ms-grid;
@@ -94,216 +108,21 @@ body {
   background: #fff;
 }
 
-.grid-item {
-  background-color: #0193cf;
-  text-indent: -999px;
-  overflow: hidden;
-  aspect-ratio: 1;
-}
-
-.grid-item:nth-child(2n + 1) {
-  background-color: #003f6b;
-}
-
-.grid-item > div {
-  width: 100%;
+.mask-polygon-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  -webkit-clip-path: polygon(50% 38%, 70% 50%, 50% 62%, 30% 50%);
+          clip-path: polygon(50% 38%, 70% 50%, 50% 62%, 30% 50%);
   height: 100%;
-  overflow: hidden;
+  background: repeating-linear-gradient(#fff, #fff calc(100% /96), #dadaec calc(100% /96), #dadaec calc(200% /96));
 }
 
-.grid-item .grid-1 {
-  background-color: #0193cf;
-}
-
-.grid-item .grid-1 .triangles {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.grid-item .grid-1 .triangles .triangle {
-  background-color: #003f6b;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: -71%;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.grid-item .grid-1 .triangles .triangle:first-child {
-  top: -71%;
-}
-
-.grid-item .grid-2,
-.grid-item .grid-12 {
-  background-color: #0056a3;
-  position: relative;
-}
-
-.grid-item .grid-2.grid-12,
-.grid-item .grid-12.grid-12 {
-  background-color: #0094d1;
-}
-
-.grid-item .grid-2 .dots,
-.grid-item .grid-12 .dots {
-  position: absolute;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  height: 50%;
-  width: 50%;
-  left: 25%;
-  top: 25%;
-}
-
-.grid-item .grid-2 .dots .dot,
-.grid-item .grid-12 .dots .dot {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.grid-item .grid-2 .dots .dot::before,
-.grid-item .grid-12 .dots .dot::before {
-  content: " ";
-  background-color: #fff;
-  width: 36%;
-  height: 36%;
-  border-radius: 100%;
-}
-
-.grid-item .grid-3 {
-  background: linear-gradient(225deg, #06c2c7 0%, #06c2c7 50%, #003f6b 50%, #003f6b 100%);
-}
-
-.grid-item .grid-4 {
-  background-color: #06c2c7;
-  position: relative;
-}
-
-.grid-item .grid-4 .dots {
-  position: absolute;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto;
-  height: calc(100% * 8.5 / 10);
-  width: calc(100% * 8.5 / 10);
-  left: calc(calc(100% - calc(100% * 8.5 / 10)) / 2);
-  top: calc(calc(100% - calc(100% * 8.5 / 10)) / 2);
-}
-
-.grid-item .grid-4 .dots .dot {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.grid-item .grid-4 .dots .dot::before {
-  content: " ";
-  background-color: #fff;
-  width: calc(36% * 10 / 8.5);
-  height: calc(36% * 10 / 8.5);
-  border-radius: 100%;
-}
-
-.grid-item .grid-5,
-.grid-item .grid-7,
-.grid-item .grid-8 {
-  background-color: #003e6d;
-  position: relative;
-}
-
-.grid-item .grid-5 .circle,
-.grid-item .grid-7 .circle,
-.grid-item .grid-8 .circle {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  bottom: -100%;
-  left: -100%;
-  border-radius: 100%;
-  background: radial-gradient(50% 50% at 50% 50%, #003e6d 0%, #003e6d 50%, #ffffff 50%, #ffffff 100%);
-}
-
-.grid-item .grid-5.grid-7,
-.grid-item .grid-7.grid-7,
-.grid-item .grid-8.grid-7 {
-  background-color: #c1e6f2;
-}
-
-.grid-item .grid-5.grid-7 .circle,
-.grid-item .grid-7.grid-7 .circle,
-.grid-item .grid-8.grid-7 .circle {
-  background: radial-gradient(50% 50% at 50% 50%, #c1e6f2 0%, #c1e6f2 50%, #ffffff 50%, #ffffff 100%);
-  top: -100%;
-  left: unset;
-  right: -100%;
-}
-
-.grid-item .grid-5.grid-8,
-.grid-item .grid-7.grid-8,
-.grid-item .grid-8.grid-8 {
-  background-color: #0055a4;
-}
-
-.grid-item .grid-5.grid-8 .circle,
-.grid-item .grid-7.grid-8 .circle,
-.grid-item .grid-8.grid-8 .circle {
-  background: radial-gradient(50% 50% at 50% 50%, #0055a4 0%, #0055a4 50%, #ffffff 50%, #ffffff 100%);
-  top: -100%;
-}
-
-.grid-item .grid-6,
-.grid-item .grid-11 {
-  background-color: #c2e6f5;
-}
-
-.grid-item .grid-9 {
-  background: linear-gradient(135deg, #06c2c7 0%, #06c2c7 50%, #003f6b 50%, #003f6b 100%);
-}
-
-.grid-item .grid-10,
-.grid-item .grid-13 {
-  background: -webkit-gradient(linear, left top, right top, from(#0056a1), color-stop(50%, #0056a1), color-stop(50%, #0293cf), to(#0293cf));
-  background: linear-gradient(90deg, #0056a1 0%, #0056a1 50%, #0293cf 50%, #0293cf 100%);
-}
-
-.grid-item .grid-14,
-.grid-item .grid-15 {
-  background-color: #003f69;
-  position: relative;
-}
-
-.grid-item .grid-14 .circle,
-.grid-item .grid-15 .circle {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  top: -100%;
-  right: -100%;
-  border-radius: 100%;
-  background-color: #06c2c7;
-}
-
-.grid-item .grid-14.grid-15 .circle,
-.grid-item .grid-15.grid-15 .circle {
-  left: -100%;
+.mask-polygon-inner .mask-white {
+  top: unset;
+  bottom: 0;
 }
 /*# sourceMappingURL=poster.css.map */

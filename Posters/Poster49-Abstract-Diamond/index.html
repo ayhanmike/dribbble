@@ -15,7 +15,11 @@
             <div class="poster-inner">
                 <div class="frame">
                     <div class="frame-grid">
-                        <div class="mask-circle"></div>
+                        <div class="mask-circle default"></div>
+                        <div class="mask-polygon"></div>
+                        <div class="mask-polygon-inner">
+                            <div class="mask-white"></div>
+                        </div>
                         <div class="mask-white"></div>
                     </div>
                 </div>
@@ -30,11 +34,18 @@
 
         // On mousemove
         frame_grid.addEventListener("mousemove", (e) => {
+            mask_circle.classList.remove("default");
             // Do math
             xPercent = parseFloat(e.offsetX / frame_grid.offsetWidth * 100);
             yPercent = parseFloat(e.offsetY / frame_grid.offsetWidth * 60);
 
-            mask_circle.style = `clip-path: circle(calc(10 * 100% / 96) at ${xPercent}% ${yPercent}%)`;
+            mask_circle.style = `clip-path: circle(calc(7 * 100% / 96) at ${xPercent}% ${yPercent}%)`;
+        });
+
+        // On mouseleave
+        frame_grid.addEventListener("mouseleave", (e) => {
+            mask_circle.style = "";
+            mask_circle.classList.add("default");
         });
     </script>
 </body>
