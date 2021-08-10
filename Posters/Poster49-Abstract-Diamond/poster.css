@@ -52,6 +52,10 @@ body {
           box-shadow: -4vh 4vh 8vh rgba(0, 0, 0, 0.37);
 }
 
+body {
+  background: linear-gradient(180deg, #7877c3 0, #8686cf 80vh, #7d7dc3 80vh, #7777bd calc(80vh + 1px), #7c7ac8 calc(80vh + 1px), #9494db 100vh);
+}
+
 .frame-grid {
   position: relative;
   height: 100%;
@@ -66,7 +70,7 @@ body {
   right: 0;
   z-index: 9;
   height: 100%;
-  background: repeating-linear-gradient(#6565c5, #6565c5 calc(100% /96), #fff calc(100% /96), #fff calc(200% /96));
+  background: repeating-linear-gradient(#fff, #fff calc(100% /96), #6565c5 calc(100% /96), #6565c5 calc(200% /96));
 }
 
 .mask-circle:hover {
@@ -75,8 +79,8 @@ body {
 }
 
 .mask-circle.default {
-  -webkit-clip-path: circle(calc(7 * 100% /96) at 75% 15%);
-          clip-path: circle(calc(7 * 100% /96) at 75% 15%);
+  -webkit-clip-path: circle(calc(9 * 100% /96) at 75% 15%);
+          clip-path: circle(calc(9 * 100% /96) at 75% 15%);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -91,7 +95,7 @@ body {
   -webkit-clip-path: polygon(50% 25%, 90% 50%, 50% 75%, 10% 50%);
           clip-path: polygon(50% 25%, 90% 50%, 50% 75%, 10% 50%);
   height: 100%;
-  background: repeating-linear-gradient(#6565c5, #6565c5 calc(100% /96), #fff calc(100% /96), #fff calc(200% /96));
+  background: repeating-linear-gradient(#fff, #fff calc(100% /96), #6565c5 calc(100% /96), #6565c5 calc(200% /96));
 }
 
 .mask-white {

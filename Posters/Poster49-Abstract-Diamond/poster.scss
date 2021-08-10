@@ -1,4 +1,11 @@
 @import "../common.scss";
+body {
+    background: linear-gradient(
+        180deg, 
+        #7877c3 0, #8686cf 80vh, 
+        #7d7dc3 80vh, #7777bd calc(80vh + 1px), 
+        #7c7ac8 calc(80vh + 1px), #9494db 100vh);;
+}
 $slice: 96;
 .frame-grid {
     position: relative;
@@ -10,7 +17,7 @@ $slice: 96;
         #fff calc(200% /#{$slice})
     );
 }
-$ellipse: calc(7 * 100% /#{$slice});
+$ellipse: calc(9 * 100% /#{$slice});
 .mask-circle {
     position: absolute;
     top: 0;
@@ -20,10 +27,10 @@ $ellipse: calc(7 * 100% /#{$slice});
     z-index: 9;
     height: 100%;
     background: repeating-linear-gradient(
-        #6565c5,
-        #6565c5 calc(100% /#{$slice}),
+        #fff,
         #fff calc(100% /#{$slice}),
-        #fff calc(200% /#{$slice})
+        #6565c5 calc(100% /#{$slice}),
+        #6565c5 calc(200% /#{$slice})
     );
     &:hover {
         cursor: grabbing;
@@ -43,10 +50,10 @@ $ellipse: calc(7 * 100% /#{$slice});
     clip-path: polygon(50% 25%, 90% 50%, 50% 75%, 10% 50%);
     height: 100%;
     background: repeating-linear-gradient(
-        #6565c5,
-        #6565c5 calc(100% /#{$slice}),
+        #fff,
         #fff calc(100% /#{$slice}),
-        #fff calc(200% /#{$slice})
+        #6565c5 calc(100% /#{$slice}),
+        #6565c5 calc(200% /#{$slice})
     );
 }
 .mask-white {

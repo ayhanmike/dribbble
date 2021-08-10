@@ -12,14 +12,28 @@
     overflow: hidden;
     aspect-ratio: 1;
 
-    &:nth-child(2n + 1) {
-        background-color: #003f6b;
-    }
-
-    > div {
+    .grid-inner {
+        position: relative;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        transform-style: preserve-3d;
+
+        > div {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            &:first-child {
+                transform: unset;
+            }
+        }
+    }
+    &.flip .grid-inner {
+        transform: rotateY(180deg);
     }
 
     .grid-1 {
