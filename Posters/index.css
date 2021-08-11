@@ -16,6 +16,12 @@ body {
   background-color: #f3f4f4;
 }
 
+header {
+  text-align: center;
+  padding: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
 main {
   padding: 2rem;
 }
@@ -34,7 +40,7 @@ main {
 .poster-index li {
   position: relative;
   padding: 1rem;
-  width: calc(100% / 2);
+  width: calc(100% / 3);
 }
 
 .poster-index li a {
