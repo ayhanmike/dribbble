@@ -2,7 +2,7 @@
 const grids = document.querySelectorAll(".grid-item");
 
 grids.forEach(item => {
-  item.addEventListener("click", (e) => {
+  item.addEventListener("mouseenter", (e) => {
     let elem = e.target;
     if (!elem.classList.contains("grid-item")) {
       elem = elem.closest(".grid-item");
