@@ -50,9 +50,9 @@ main {
 
 .poster-index li a.poster-link {
   height: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 0.5rem;
-  padding: 1rem 1rem 4rem 1rem;
+  padding: 1rem 1rem 5rem 1rem;
   color: #444444;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,7 +85,7 @@ main {
   bottom: 2rem;
   left: 2rem;
   z-index: 1;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 0.375rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -94,11 +94,11 @@ main {
       -ms-flex-align: center;
           align-items: center;
   color: #444444;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .poster-index li a.by-link img {
-  height: 1.5rem;
+  height: 1rem;
   margin-right: 0.5rem;
   -webkit-clip-path: circle();
           clip-path: circle();
