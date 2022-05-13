@@ -25,6 +25,16 @@ header {
     left: 0;
     right: 0;
     padding: 1rem;
+
+    .back-to-home {
+        padding:0.5rem 1rem;
+        text-decoration:none;
+        border:1px solid #ddd;
+        border-radius:0.25rem;
+        cursor:pointer;
+        background:#f9f9f9;
+        color: #444444;
+    }
 }
 
 .wrapper {
