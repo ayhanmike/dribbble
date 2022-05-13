@@ -1,4 +1,3 @@
-
 const frame = document.querySelector(".frame");
 const poster = document.querySelector(".poster");
 
@@ -9,5 +8,6 @@ poster.addEventListener("mousemove", (e) => {
   frame.style.transform = `perspective(calc(60vh * 0.6)) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 });
 
-const HEADER = `<header><a href="/" title="Back to Home">Home</a></header>`;
-document.body.insertAdjacentHTML('beforeend', HEADER);
+const HEADER = `<header><a href="/" title="Back to Home" class="back-to-home">Home</a></header>`;
+document.body.insertAdjacentHTML("beforeend", HEADER);
+111;
