@@ -12,6 +12,14 @@ body {
   background: linear-gradient(180deg, #efefef 0, #efefef 80vh, #cccccc 80vh, #cccccc calc(80vh + 1px), #ffffff calc(80vh + 1px), #ffffff 100vh);
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,5 +58,28 @@ body {
           transform: perspective(calc(60vh * 0.6)) rotateX(1deg);
   -webkit-box-shadow: -4vh 4vh 8vh rgba(0, 0, 0, 0.37);
           box-shadow: -4vh 4vh 8vh rgba(0, 0, 0, 0.37);
+}
+
+.poster-index {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.poster-index li a {
+  display: block;
+  text-decoration: none;
+}
+
+.poster-index li a.poster-link {
+  color: #444444;
+}
+
+.poster-index li a.dribbble-link {
+  color: #3a8bbb;
+}
+
+.poster-index li a.dribbble-link img {
+  height: 2rem;
 }
 /*# sourceMappingURL=common.css.map */

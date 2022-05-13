@@ -1,0 +1,89 @@
+@import "../common.scss";
+body {
+    background: linear-gradient(
+        180deg, 
+        #7877c3 0, #8686cf 80vh, 
+        #7d7dc3 80vh, #7777bd calc(80vh + 1px), 
+        #7c7ac8 calc(80vh + 1px), #9494db 100vh);;
+}
+$slice: 96;
+.frame-grid {
+    position: relative;
+    height: 100%;
+    background: repeating-linear-gradient(
+        #dadaec,
+        #dadaec calc(100% /#{$slice}),
+        #fff calc(100% /#{$slice}),
+        #fff calc(200% /#{$slice})
+    );
+}
+$ellipse: calc(9 * 100% /#{$slice});
+.mask-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    height: 100%;
+    background: repeating-linear-gradient(
+        #fff,
+        #fff calc(100% /#{$slice}),
+        #6565c5 calc(100% /#{$slice}),
+        #6565c5 calc(200% /#{$slice})
+    );
+    &:hover {
+        cursor: grabbing;
+    }
+    &.default {
+        clip-path: circle($ellipse at 75% 15%);
+        transition: all 0.3s ease-in-out;
+    }
+}
+.mask-polygon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    clip-path: polygon(50% 25%, 90% 50%, 50% 75%, 10% 50%);
+    height: 100%;
+    background: repeating-linear-gradient(
+        #fff,
+        #fff calc(100% /#{$slice}),
+        #6565c5 calc(100% /#{$slice}),
+        #6565c5 calc(200% /#{$slice})
+    );
+}
+.mask-white {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 50%;
+    background: #fff;
+}
+.mask-polygon-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    clip-path: polygon(50% 38%, 70% 50%, 50% 62%, 30% 50%);
+    height: 100%;
+    background: repeating-linear-gradient(
+        #fff,
+        #fff calc(100% /#{$slice}),
+        #dadaec calc(100% /#{$slice}),
+        #dadaec calc(200% /#{$slice})
+    );
+    .mask-white {
+        top: unset;
+        bottom: 0;
+    }
+}

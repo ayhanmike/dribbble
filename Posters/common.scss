@@ -19,6 +19,14 @@ body {
     );
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+}
+
 .wrapper {
     display: flex;
     justify-content: flex-end;
@@ -44,4 +52,25 @@ $frame_height: 60vh;
     border-bottom: 1px solid lightgray;
     transform: perspective(calc(#{$frame_height} * 0.6)) rotateX(1deg);
     box-shadow: -4vh 4vh 8vh rgba($color: #000000, $alpha: 0.37);
+}
+
+.poster-index {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        a {
+            display: block;
+            text-decoration: none;
+            &.poster-link {
+                color: #444444;
+            }
+            &.dribbble-link {
+                color: #3a8bbb;
+                img {
+                    height: 2rem;
+                }
+            }
+        }
+    }
 }

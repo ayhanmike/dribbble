@@ -8,3 +8,6 @@ poster.addEventListener("mousemove", (e) => {
   let yAxis = (window.innerHeight / 2 - e.pageY) / 255;
   frame.style.transform = `perspective(calc(60vh * 0.6)) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 });
+
+const HEADER = `<header><a href="/posters/">Home</a></header>`;
+document.body.insertAdjacentHTML('beforeend', HEADER);

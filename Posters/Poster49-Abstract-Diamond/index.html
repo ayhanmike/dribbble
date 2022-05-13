@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster49 - Abstract Diamond</title>
+    <link href="poster.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="poster">
+            <div class="poster-inner">
+                <div class="frame">
+                    <div class="frame-grid">
+                        <div class="mask-circle default"></div>
+                        <div class="mask-polygon"></div>
+                        <div class="mask-polygon-inner">
+                            <div class="mask-white"></div>
+                        </div>
+                        <div class="mask-white"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../common.js"></script>
+    <script>
+        // Container and displays
+        const frame_grid = document.querySelector(".frame-grid");
+        const mask_circle = document.querySelector(".mask-circle");
+
+        // On mousemove
+        frame_grid.addEventListener("mousemove", (e) => {
+            mask_circle.classList.remove("default");
+            // Do math
+            xPercent = parseFloat(e.offsetX / frame_grid.offsetWidth * 100);
+            yPercent = parseFloat(e.offsetY / frame_grid.offsetWidth * 60);
+
+            mask_circle.style = `clip-path: circle(calc(9 * 100% / 96) at ${xPercent}% ${yPercent}%)`;
+        });
+
+        // On mouseleave
+        frame_grid.addEventListener("mouseleave", (e) => {
+            mask_circle.style = "";
+            mask_circle.classList.add("default");
+        });
+    </script>
+</body>
+
+</html>
