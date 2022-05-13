@@ -10,4 +10,4 @@ poster.addEventListener("mousemove", (e) => {
 });
 
 const HEADER = `<header><a href="/">Home</a></header>`;
-document.body.insertAdjacentHTML('beforeend', HEADER)
+document.body.insertAdjacentHTML('beforeend', HEADER);
