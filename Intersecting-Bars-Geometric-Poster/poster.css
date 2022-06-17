@@ -1,0 +1,193 @@
+*,
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #efefef 0, #efefef 80vh, #cccccc 80vh, #cccccc calc(80vh + 1px), #ffffff calc(80vh + 1px), #ffffff 100vh);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+header .back-to-home {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background: #f9f9f9;
+  color: #444444;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.poster {
+  position: relative;
+  padding: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.frame {
+  position: relative;
+  height: 60vh;
+  width: calc(60vh * 0.6);
+  background-color: #ffffff;
+  padding: calc(60vh * 0.2);
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-bottom: 1px solid lightgray;
+  -webkit-transform: perspective(calc(60vh * 0.6)) rotateX(1deg);
+          transform: perspective(calc(60vh * 0.6)) rotateX(1deg);
+  -webkit-box-shadow: -4vh 4vh 8vh rgba(0, 0, 0, 0.37);
+          box-shadow: -4vh 4vh 8vh rgba(0, 0, 0, 0.37);
+}
+
+.poster-index {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.poster-index li a {
+  display: block;
+  text-decoration: none;
+}
+
+.poster-index li a.poster-link {
+  color: #444444;
+}
+
+.poster-index li a.dribbble-link {
+  color: #3a8bbb;
+}
+
+.poster-index li a.dribbble-link img {
+  height: 2rem;
+}
+
+body {
+  background-color: #0b134f;
+}
+
+.frame-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  height: 100%;
+  background-color: #edece5;
+  padding: 25% 15%;
+}
+
+.frame-grid.clicked .grid-item:not(.clicked) {
+  opacity: 0.37;
+}
+
+.frame-grid .grid-item {
+  background-color: #edece5;
+  text-indent: -999px;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.frame-grid .grid-item .grid-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.frame-grid .grid-item .grid-inner > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  cursor: pointer;
+}
+
+.frame-grid .grid-item .grid-inner > div span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+}
+
+.frame-grid .grid-item .grid-inner > div.horizontal {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.frame-grid .grid-item .grid-inner > div .size-6 {
+  height: calc(100% / 7 * 6);
+}
+
+.frame-grid .grid-item .grid-inner > div.horizontal .size-6 {
+  width: calc(100% / 7 * 6);
+}
+
+.frame-grid .grid-item .grid-inner > div .black {
+  background-color: #000000;
+}
+
+.frame-grid .grid-item .grid-inner > div .blue {
+  background-color: #0d92f8;
+}
+
+.frame-grid .grid-item .grid-inner > div .sky {
+  background-color: #55d4f4;
+}
+
+.frame-grid .grid-item .grid-inner > div .beige {
+  background-color: #edece5;
+}
+/*# sourceMappingURL=poster.css.map */
