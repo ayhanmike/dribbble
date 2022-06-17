@@ -40,7 +40,7 @@ main {
 .poster-index li {
   position: relative;
   padding: 1rem;
-  width: calc(100% / 3);
+  width: calc(100% / 4);
 }
 
 .poster-index li a {
