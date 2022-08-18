@@ -27,10 +27,17 @@ main {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+    
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
     li {
         position: relative;
         padding: 1rem;
         width: calc(100% / 4);
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
         a {
             display: block;
             text-decoration: none;

@@ -37,10 +37,25 @@ main {
       flex-wrap: wrap;
 }
 
+@media screen and (max-width: 768px) {
+  .poster-index {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .poster-index li {
   position: relative;
   padding: 1rem;
   width: calc(100% / 4);
+}
+
+@media screen and (max-width: 768px) {
+  .poster-index li {
+    width: 100%;
+  }
 }
 
 .poster-index li a {
